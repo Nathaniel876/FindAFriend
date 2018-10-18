@@ -20,10 +20,6 @@ function handleRequest(req, res) {
     }
 }
 
-server.listen(PORT, function () {
-    console.log("Server is listening on PORT: " + PORT);
-});
-
 function survey(res) {
     fs.readFile(__dirname + "/public/survey.html", function (err, data) {
         res.writeHead(200, { "Content-Type": "text/html" });
@@ -36,3 +32,6 @@ function home(res) {
         res.end(data);
     });
 }
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
